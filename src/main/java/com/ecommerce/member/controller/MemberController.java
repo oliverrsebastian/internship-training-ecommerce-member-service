@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 public class MemberController {
 
     private MemberService memberService;
@@ -31,7 +32,7 @@ public class MemberController {
         return memberService.insertMember(member);
     }
 
-    @PutMapping(path = "/members/_update", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(path = "/members/_edit", produces = MediaType.APPLICATION_JSON_VALUE)
     public Member updateMember(@RequestBody Member member) {
         return memberService.updateMember(member);
     }
